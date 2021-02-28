@@ -16,4 +16,4 @@ spec:
       - name: liberty
         image: tkoshimoto/sample2:0.1
         ports:
-        - containerPort: 9080
+        - containerPort: 8080
