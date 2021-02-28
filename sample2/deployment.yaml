@@ -11,6 +11,6 @@ spec:
     spec:
       containers:
       - name: was
-        image: maho/sample1:0.1
+        image: tatsuya1972/sample2:0.1
         ports:
         - containerPort: 9080
