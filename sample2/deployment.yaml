@@ -10,7 +10,7 @@ spec:
         app: liberty
     spec:
       containers:
-      - name: was
+      - name: liberty
         image: tatsuya1972/sample2:0.1
         ports:
         - containerPort: 9080
