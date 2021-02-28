@@ -4,6 +4,9 @@ metadata:
   name: liberty
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      app: liberty
   template:
     metadata:
       labels:
