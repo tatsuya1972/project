@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: liberty
-        image: tatsuya1972/sample2:0.1
+        image: tkoshimoto/sample2:0.1
         ports:
         - containerPort: 9080
