@@ -7,7 +7,6 @@ metadata:
 spec:
   selector:
     app: liberty
-    deployment: liberty
   ports:
   - name: 80-tcp
     port: 80
