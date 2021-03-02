@@ -1,2 +1,2 @@
 FROM docker.io/websphere-liberty
-COPY Sample2.war /config/dropins/
+COPY Sample1.war /config/dropins/
