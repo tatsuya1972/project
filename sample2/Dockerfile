@@ -1,2 +1,6 @@
 FROM websphere-liberty:webProfile7
-ADD ./Sample2.war /config/dropins/
+
+COPY Sample2.war /config/apps
+RUN chown 1001:0 /config/apps/Sample2.war
+
+USER 1001
