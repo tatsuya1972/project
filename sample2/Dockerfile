@@ -1,2 +1,2 @@
-FROM docker.io/websphere-liberty:webProfile8
+FROM docker.io/websphere-liberty
 COPY Sample2.war /config/dropins/
