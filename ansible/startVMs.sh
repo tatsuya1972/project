@@ -8,4 +8,4 @@ VBoxManage startvm centwb01 --type headless
 
 VBoxManage list runningvms
 
-exit0
+exit 0
