@@ -1,2 +1,2 @@
 FROM docker.io/websphere-liberty
-COPY WebTest.war /config/dropins/
+COPY WebTest1.war /config/dropins/
