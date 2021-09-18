@@ -4,5 +4,5 @@ LABEL description="A custom Apache container based on UBI 8.2"
 RUN yum install -y httpd && \
     yum clean all
 RUN echo "Hello world!" > /var/www/html/index.html
-EXPOSE 8080
+EXPOSE 80
 CMD ["httpd", "-D", "FOREGROUND"]
