@@ -1,8 +1,13 @@
-FROM registry.redhat.io/ubi8/ubi:8.2
+FROM registry.redhat.io/ubi7/ubi:7.9
 LABEL maintainer="tkoshimoto@yahoo.co.jp" \
       description="A custom Apache container based on UBI 8.2"
+ENV PORT 8080
 RUN yum install -y httpd && \
     yum clean all
-RUN echo "Hello world!" > /var/www/html/index.html
-EXPOSE 80
+RUN sed -i -e "s/^Listen 80/Listen 8080/" /etc/httpd/conf/httpd.conf && \
+    chown -R 48:48 /var/log/httpd && \
+    chown -R 48:48 /run/httpd
+EXPOSE ${PORT}
+USER apache
+ADD index.html /var/www/html/
 CMD ["httpd", "-D", "FOREGROUND"]
