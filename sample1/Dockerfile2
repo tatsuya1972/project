@@ -6,6 +6,7 @@ RUN yum install -y httpd && \
 RUN sed -i -e 's/^Linsten 80/Listen 8080/' /etc/httpd/conf/httpd.conf && \
     chown -R 48:48 /etc/httpd/conf/httpd.conf && \
     chown -R 48:48 /run/httpd
+USER apache
 EXPOSE ${PORT}
 COPY ./src/ /var/www/html/
 CMD ["httpd", "-D", "FOREGROUND"]
