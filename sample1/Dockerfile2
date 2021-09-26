@@ -1,0 +1,11 @@
+FROM ubi7/ubi:7.7
+LABEL org.opencontainers.image.authors="tkoshimoto@yahoo.co.jp"
+ENV PORT 8080
+RUN yum install -y httpd && \
+    yum clean all
+RUN sed -i -e 's/^Linsten 80/Listen 8080/' /etc/httpd/conf/httpd.conf && \
+    chown -R 48:48 /etc/httpd/conf/httpd.conf && \
+    chown -R 48:48 /run/httpd
+EXPOSE ${PORT}
+COPY ./src/ /var/www/html/
+CMD ["httpd", "-D", "FOREGROUND"]
