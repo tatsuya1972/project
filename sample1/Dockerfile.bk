@@ -4,7 +4,7 @@ LABEL maintainer="tkoshimoto@yahoo.co.jp" \
 ENV PORT 8080
 RUN yum install -y httpd && \
     yum clean all
-RUN sed -i -e "s/^Listen 80/Listen 8080/" /etc/httpd/conf/httpd.conf && \
+RUN sed -i -e "s/^Listen 80/c\Listen ${PORT}" /etc/httpd/conf/httpd.conf && \
     chown -R 48:48 /var/log/httpd && \
     chown -R 48:48 /run/httpd
 EXPOSE ${PORT}
